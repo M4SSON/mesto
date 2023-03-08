@@ -1,5 +1,5 @@
-.element__likeButton{
-    background-image: url(../images/likeButton.png);
+.element__like-button{
+    background-image: url(../../../images/likeButton.png);
     background-color: white;
     width: 22px;
     height: 19px;

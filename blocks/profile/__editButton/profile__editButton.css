@@ -1,4 +1,4 @@
-.profile__editButton{
+.profile__edit-button{
     background-color: black;
     background-image: url(../../../images/Vector.png);
     background-position: center;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 879px) {
-    .profile__editButton{
+    .profile__edit-button{
         width: 18px;
         height: 18px;
     }

@@ -3,6 +3,7 @@
     margin: 0 auto;
     background-color: black;
     color: white;
+    font-family: 'inter', 'Arial';
 }
 
 @media screen and (max-width: 879px) {

@@ -1,4 +1,4 @@
-.profile__profileInfo{
+.profile__profile-info{
     max-width: 336px;
     width: 100%;
     padding-left: 30px;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 879px) {
-    .profile__profileInfo{
+    .profile__profile-info{
         padding: 0;
         margin-top: 22.25px;
         max-width: 282px;
