@@ -21,11 +21,11 @@ function CloseEditForm(){
 function ProfileEdit(){
     name.textContent = inputName.value;
     status.textContent = inputWorkplace.value;
-    CloseEditForm();
+    popup.classList.remove('popup_opened');
 }
 
 buttonOpen.addEventListener('click', OpenEditForm);
 
-form.addEventListener('submit', ProfileEdit);   
+saveButton.addEventListener('click', ProfileEdit);   
  
 buttonClose.addEventListener('click', CloseEditForm);
