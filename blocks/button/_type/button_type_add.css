@@ -1,4 +1,4 @@
-.profile__add-button{
+.button_type_add{
     background-color: black;
     background-image: url(../../../images/add.png);
     background-position: center;
@@ -11,12 +11,12 @@
 }
 
 @media screen and (max-width: 879px) {
-    .profile__add-button{
+    .button_type_add{
         width: 282px;
         margin-top: 36px;
     }
 }
 
-.profile__add-button:hover{
+.button_type_add:hover{
     opacity: 0.6;
 }
