@@ -8,24 +8,24 @@ const name = document.getElementById('name');
 const status = document.getElementById('workplace'); 
 const form = document.getElementById('form');
 
-function OpenEditForm(){
+function openEditForm(){
     popup.classList.add('popup_opened');
     inputName.value = name.textContent;
     inputWorkplace.value = status.textContent;
 }
 
-function CloseEditForm(){
+function closeEditForm(){
     popup.classList.remove('popup_opened');
 }
 
-function ProfileEdit(){
+function profileEdit(){
     name.textContent = inputName.value;
     status.textContent = inputWorkplace.value;
-    popup.classList.remove('popup_opened');
+    closeEditForm();
 }
 
-buttonOpen.addEventListener('click', OpenEditForm);
+buttonOpen.addEventListener('click', openEditForm);
 
-saveButton.addEventListener('click', ProfileEdit);   
+saveButton.addEventListener('submit', profileEdit);   
  
-buttonClose.addEventListener('click', CloseEditForm);
+buttonClose.addEventListener('click', closeEditForm);
