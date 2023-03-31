@@ -4,14 +4,14 @@ const popup = document.getElementById('popup');
 const inputName = document.getElementById('name-edit');
 const inputWorkplace = document.getElementById('workplace-edit');
 const saveButton = document.getElementById('save-button');
-const name = document.getElementById('name');
-const status = document.getElementById('workplace'); 
+const profileName = document.getElementById('name');
+const profileStatus = document.getElementById('workplace'); 
 const form = document.getElementById('form');
 
 function openEditForm(){
     popup.classList.add('popup_opened');
-    inputName.value = name.textContent;
-    inputWorkplace.value = status.textContent;
+    inputName.value = profileName.textContent;
+    inputWorkplace.value = profileStatus.textContent;
 }
 
 function closeEditForm(){
@@ -19,13 +19,13 @@ function closeEditForm(){
 }
 
 function profileEdit(){
-    name.textContent = inputName.value;
-    status.textContent = inputWorkplace.value;
+    profileName.textContent = inputName.value;
+    profileStatus.textContent = inputWorkplace.value;
     closeEditForm();
 }
 
 buttonOpen.addEventListener('click', openEditForm);
 
-saveButton.addEventListener('submit', profileEdit);   
+form.addEventListener('submit', profileEdit);   
  
 buttonClose.addEventListener('click', closeEditForm);
