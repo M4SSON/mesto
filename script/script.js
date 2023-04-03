@@ -18,7 +18,8 @@ function closeEditForm(){
     popup.classList.remove('popup_opened');
 }
 
-function profileEdit(){
+function profileEdit(evt){
+    evt.preventDefault();
     profileName.textContent = inputName.value;
     profileStatus.textContent = inputWorkplace.value;
     closeEditForm();
