@@ -14,6 +14,7 @@
 
 @media screen and (max-width: 879px) {
     .button_type_save{
+        width: 238px;
         margin: 45px 22px 25px;
         font-size: 14px;
         line-height: 17px;
