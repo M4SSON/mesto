@@ -12,7 +12,7 @@
     border: 0;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 900px) {
     .button_type_save{
         width: 238px;
         margin: 45px 22px 25px;

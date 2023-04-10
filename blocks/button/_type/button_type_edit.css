@@ -9,7 +9,7 @@
     align-self: end;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 900px) {
     .button_type_edit{
         width: 18px;
         height: 18px;
