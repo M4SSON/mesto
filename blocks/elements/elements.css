@@ -8,6 +8,7 @@
 
 @media screen and (max-width: 900px) {
     .elements{
+        margin: 0 auto;
         max-width: 282px;
         grid-template-columns: 282px;
         align-self: center;
