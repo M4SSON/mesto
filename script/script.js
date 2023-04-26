@@ -98,8 +98,12 @@ function full(){
   fullscreenPopup.classList.add('popup_opened');
 }
 
+function closeFullscreenForm(){
+  fullscreenPopup.classList.remove('popup_opened');
+}
 
 
+fullscreenCloseButton.addEventListener('click', closeFullscreenForm);
 
 
 
