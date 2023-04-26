@@ -1,0 +1,12 @@
+.button_type_unfullscreen{
+    position: absolute;
+    right: -8px;
+    top: -8px;
+}
+
+@media screen and (max-width: 900px) {
+    .button_type_unfullscreen{
+        right: 0;
+        top: -16px;
+    }
+}

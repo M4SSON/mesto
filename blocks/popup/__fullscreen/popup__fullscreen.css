@@ -1,3 +1,16 @@
 .popup__fullscreen{
-    background-color: rgba(0,0,0,0.9);
+    position: relative;
+    position: flex;
+    align-self: center;
+    max-width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__fullscreen{
+        max-width: 240px;
+    }
 }

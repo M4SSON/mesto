@@ -84,13 +84,13 @@ function remove(){
 }
 
 
-const fullscreenPopup = document.querySelector('.popup__fullscreen');
+const fullscreenPopup = document.getElementById('fullscreen-popup');
 const fullscreenCloseButton = document.getElementById('close-button-fullscreen');
 
 
 function full(){
-  const fullscreenImage = document.querySelector('.popup__fullsrceen-image');
-  const fullscreenName = document.querySelector('.popup__fullsrceen-title');
+  const fullscreenImage = document.getElementById('fullscreen-image');
+  const fullscreenName = document.getElementById('fullscreen-name');
   const image = document.getElementById('place-image');
   const name = document.getElementById('place-name');
   fullscreenImage.src = image.src;
