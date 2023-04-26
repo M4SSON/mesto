@@ -6,6 +6,8 @@
     align-items: center;
     top: 0;
     left:0;
+    opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
+    transition: visibility 0s, opacity 0.5s;
+    visibility: hidden;
 }

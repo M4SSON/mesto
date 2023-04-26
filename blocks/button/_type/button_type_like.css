@@ -11,3 +11,7 @@
 .button_type_like:hover{
     opacity: 0.5;
 }
+
+.button_type_liked{
+    background-image: url(../../../images/likeButtonOn.png);
+}
