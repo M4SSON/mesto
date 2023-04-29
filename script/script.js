@@ -54,8 +54,8 @@ function closePopup(popup){
 
 function openAddForm(){
   openPopup(addPopup);
-  inputPlace.value = '';
-  inputImage.value = '';   
+  //inputPlace.value = '';
+  //inputImage.value = '';   
 }
 
 function openEditForm(){
