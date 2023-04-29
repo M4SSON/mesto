@@ -54,8 +54,8 @@ function closePopup(popup){
 
 function openAddForm(){
   openPopup(addPopup);
-  inputPlace.value = profileName.textContent;
-  inputImage.value = profileStatus.textContent;   
+  inputPlace.value = '';
+  inputImage.value = '';   
 }
 
 function openEditForm(){
