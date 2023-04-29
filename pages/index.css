@@ -35,3 +35,9 @@
 @import url(../blocks/popup/__fullscreen-title/popup__fullscreen-title.css);
 @import url(../blocks/popup/__fullscreen/popup__fullscreen.css);
 @import url(../blocks/button/_type/button_type_unfullscreen.css);
+@import url(../blocks/popup/__form-input/_type/popup__form-input_type_name.css);
+@import url(../blocks/popup/__form-input/_type/popup__form-input_type_photo.css);
+@import url(../blocks/popup/__form-input/_type/popup__form-input_type_place.css);
+@import url(../blocks/popup/__form-input/_type/popup__form-input_type_workplace.css);
+@import url(../blocks/popup/__form/_type/popup__form_type_add.css);
+@import url(../blocks/popup/__form/_type/popup__form_type_edit.css);

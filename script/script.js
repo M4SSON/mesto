@@ -1,44 +1,27 @@
-const buttonOpen = document.getElementById('button-edit');
-const buttonClose = document.getElementById('close-button');
-const popupEdit = document.getElementById('edit-popup');
-const inputName = document.getElementById('name-edit');
-const inputWorkplace = document.getElementById('workplace-edit');
-const saveButton = document.getElementById('save-button');
-const profileName = document.getElementById('name');
-const profileStatus = document.getElementById('workplace'); 
-const form = document.getElementById('form');
-
-function openEditForm(){
-    popupEdit.classList.add('popup_opened');
-    inputName.value = profileName.textContent;
-    inputWorkplace.value = profileStatus.textContent;
-}
-
-function closeEditForm(){
-    popupEdit.classList.remove('popup_opened');
-}
-
-function profileEdit(evt){
-    evt.preventDefault();
-    profileName.textContent = inputName.value;
-    profileStatus.textContent = inputWorkplace.value;
-    closeEditForm();
-}
-
-buttonOpen.addEventListener('click', openEditForm);
-form.addEventListener('submit', profileEdit);   
-buttonClose.addEventListener('click', closeEditForm);
-
-//-----------------------------------------------------------------------------------------
-
 const elements = document.querySelector('.elements');
-const addButton = document.getElementById('add-button');
-const addPopup = document.getElementById('add-popup');
-const closeButtonAdd = document.getElementById('close-button-add');
-const saveButtonAdd = document.getElementById('save-button-add');
-const addForm = document.getElementById('add-form');
-const placeName = document.getElementById('new-place-name');
-const placePhoto = document.getElementById('new-place-photo');
+const addButton = document.querySelector('.button_type_add');
+const buttonOpen = document.querySelector('.button_type_edit');
+const profileName = document.querySelector('.profile__name');
+const profileStatus = document.querySelector('.profile__workplace'); 
+
+const popupEdit = document.querySelector('.popup_type_edit-form');
+const closeButtons = popupEdit.querySelectorAll('.button_type_close'); //
+const saveButton = popupEdit.querySelector('.button_type_save');
+const form = popupEdit.querySelector('.popup__form_type_edit');  //form
+const inputName = form.querySelector('.popup__form-input_type_name');
+const inputWorkplace = form.querySelector('.popup__form-input_type_workplace');
+
+const addPopup = document.querySelector('.popup_type_add-form');
+const addForm = addPopup.querySelector('.popup__form_type_add');
+//const closeButtonAdd = document.getElementById('close-button-add'); //
+const saveButtonAdd = document.getElementById('save-button-add'); //
+const placeName = addForm.querySelector('.popup__form-input_type_place');
+const placePhoto = addForm.querySelector('.popup__form-input_type_photo');
+
+
+const fullscreenPopup = document.querySelector('.popup_type_fullscreen-form');
+//const fullscreenCloseButton = document.getElementById('close-button-fullscreen');
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -66,6 +49,44 @@ const initialCards = [
     }
 ];
 
+function openPopup(popup){
+  popup.classList.add('popup_opened');
+}
+
+function closePopup(popup){
+  popup.classList.remove('popup_opened');
+}
+
+function openAddForm(){
+  openPopup(addPopup);
+  inputPlace.value = profileName.textContent;
+  inputImage.value = profileStatus.textContent;   
+}
+
+function openEditForm(){
+    openPopup(popupEdit);
+    inputName.value = profileName.textContent;
+    inputWorkplace.value = profileStatus.textContent;
+}
+
+/*function closeEditForm(){
+    popupEdit.classList.remove('popup_opened');
+}*/
+
+function editProfile(evt){
+    evt.preventDefault();
+    profileName.textContent = inputName.value;
+    profileStatus.textContent = inputWorkplace.value;
+    closePopup(popupEdit);
+    //closeEditForm();
+}
+
+
+
+//-----------------------------------------------------------------------------------------
+
+
+
 function like(){
   const likeButton = document.querySelector('.button_type_like');
   function liked() {
@@ -83,11 +104,6 @@ function remove(){
   removeButton.addEventListener('click', removing);
 }
 
-
-const fullscreenPopup = document.getElementById('fullscreen-popup');
-const fullscreenCloseButton = document.getElementById('close-button-fullscreen');
-
-
 function full(){
   const fullscreenImage = document.getElementById('fullscreen-image');
   const fullscreenName = document.getElementById('fullscreen-name');
@@ -95,17 +111,12 @@ function full(){
   const name = document.getElementById('place-name');
   fullscreenImage.src = image.src;
   fullscreenName.textContent = name.textContent;
-  fullscreenPopup.classList.add('popup_opened');
+  openPopup(fullscreenPopup);
 }
 
-function closeFullscreenForm(){
+/*function closeFullscreenForm(){
   fullscreenPopup.classList.remove('popup_opened');
-}
-
-
-fullscreenCloseButton.addEventListener('click', closeFullscreenForm);
-
-
+}*/
 
 function addElement(inputPlace, inputImage){
   let article = document.createElement('article');
@@ -118,24 +129,24 @@ function addElement(inputPlace, inputImage){
   img.addEventListener('click', full);
   like();
   remove();
-  closeAddForm();
+  closePopup(addPopup);
+  //closeAddForm();
 
 }
 
-function openAddForm(){
-    addPopup.classList.add('popup_opened');   
-}
 
-function closeAddForm(){
+
+/*function closeAddForm(){
     addPopup.classList.remove('popup_opened');
-}
+}*/
 
 function addPlace(evt){
   evt.preventDefault();
   const inputPlace = placeName.value;
   const inputIamge = placePhoto.value;
   addElement(inputPlace, inputIamge);
-  closeAddForm();
+  //closeAddForm();
+  evt.target.reset();
 }
 
 initialCards.forEach((mesto) => {
@@ -143,8 +154,18 @@ initialCards.forEach((mesto) => {
 });
 
 addButton.addEventListener('click', openAddForm);
-closeButtonAdd.addEventListener('click', closeAddForm);
+//closeButtonAdd.addEventListener('click', closeAddForm);
 addForm.addEventListener('submit', addPlace);   
- 
 
+buttonOpen.addEventListener('click', openEditForm);
+form.addEventListener('submit', editProfile);   
+//buttonClose.addEventListener('click', closeEditForm);
 
+//fullscreenCloseButton.addEventListener('click', closeFullscreenForm);
+
+//создать ролик 1-2 мин на ценности
+
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+})
